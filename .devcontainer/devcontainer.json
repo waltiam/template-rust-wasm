@@ -1,0 +1,43 @@
+{
+	"name": "Vue (Community)",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// "context": "..",
+		// Update 'VARIANT' to pick a Node version: 10, 12, 14
+		"args": { "VARIANT": "14" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		// "terminal.integrated.shell.linux": "/bin/zsh"
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		// common
+		"formulahendry.code-runner",
+		"asciidoctor.asciidoctor-vscode",
+		"mhutchie.git-graph",
+		"alefragnani.bookmarks",
+		"eamodio.gitlens",
+		"github.vscode-pull-request-github",
+		"donjayamanne.githistory",
+		"hoovercj.vscode-power-mode",
+		"mutantdino.resourcemonitor",
+		// vue
+		"dbaeumer.vscode-eslint",
+		"octref.vetur"
+	],
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8080
+	],
+	
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+	
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}
