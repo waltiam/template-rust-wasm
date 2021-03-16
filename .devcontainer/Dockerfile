@@ -24,6 +24,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # Install yarn, nvm
     && rm -rf /opt/yarn-* /usr/local/bin/yarn /usr/local/bin/yarnpkg \
     && bash /tmp/library-scripts/node-debian.sh "${NVM_DIR}" "none" "${USERNAME}" \
+    # Install rust
+    && bash /tmp/library-scripts/rust-debian.sh "${CARGO_HOME}" "${RUSTUP_HOME}" "${USERNAME}" "true" "true" \
     # Configure global npm install location, use group to adapt to UID/GID changes
     && if ! cat /etc/group | grep -e "^npm:" > /dev/null 2>&1; then groupadd -r npm; fi \
     && usermod -a -G npm ${USERNAME} \
